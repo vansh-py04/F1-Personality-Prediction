@@ -21,6 +21,8 @@ Training: The model was trained on Google Colab for convenience and GPU accelera
 
 Frontend: Built using Plotly Dash, allowing real-time predictions and a visual UI with images of real F1 drivers.
 
+Model weights : model.safetensors file is very large for GITHUB. You can train your own model to acquire the file, or use the deployed link.
+
 ---
 # What the Model Does
 Accepts a sentence or paragraph written by a user.
