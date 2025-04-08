@@ -6,7 +6,9 @@ It uses a BERT-based model for accurate natural language understanding and is wr
 ---
 # Essential Links
  Dataset : [Link](https://www.kaggle.com/datasets/datasnaek/mbti-type)
+ 
  Colab Notebook : Used for training the model using GPU. [Link](https://colab.research.google.com/drive/1GOBU8qIKVqnMQ1gH_6T5tyD8li98GWnO?usp=sharing)
+ 
  Deployed Project : 
 
 ---
