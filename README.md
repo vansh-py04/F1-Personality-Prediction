@@ -4,10 +4,16 @@ This project predicts a user's MBTI personality type based on a text input and m
 It uses a BERT-based model for accurate natural language understanding and is wrapped in an interactive Dash web app UI for a smooth and stylish experience.
 
 ---
+# Essential Links
+ Dataset : [Link](https://www.kaggle.com/datasets/datasnaek/mbti-type)
+ Colab Notebook : Used for training the model using GPU. [Link](https://colab.research.google.com/drive/1GOBU8qIKVqnMQ1gH_6T5tyD8li98GWnO?usp=sharing)
+ Deployed Project : 
+
+---
 # About the Project
 Model: Fine-tuned using BERT (bert-base-uncased) to classify MBTI types from text inputs.
 
-Dataset: A large corpus of personality-labeled text was used for training (not included here).
+Dataset: A large corpus of personality-labeled text was used for training [Link](https://www.kaggle.com/datasets/datasnaek/mbti-type).
 
 Training: The model was trained on Google Colab for convenience and GPU acceleration.
 
