@@ -5,9 +5,14 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import os
+import gdown
 
 # Load model and tokenizer
 model_path = "model"
+if not os.path.exists(model_path):
+    print("Downloading model...")
+    gdown.download("https://drive.google.com/file/d/1E_7Zwg4IwRKx5RPBQBE-JpZmHEgOYwZ_/view?usp=sharing", model_path, quiet=False)
+
 tokenizer_path = "tokenizer"
 model = AutoModelForSequenceClassification.from_pretrained(model_path)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
