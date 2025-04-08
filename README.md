@@ -32,3 +32,7 @@ Predicts one of 16 MBTI personality types.
 Matches that personality to a real-life F1 driver.
 
 Displays the prediction and the corresponding driver's name + image.
+
+---
+# Snippet
+![Image](https://github.com/user-attachments/assets/9ccbc4c3-97b3-468c-befd-2b06ec3e5dc6)
