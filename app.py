@@ -11,7 +11,7 @@ import zipfile
 # Load model and tokenizer
 model_dir = "model"
 model_zip = "modelzip.zip"
-gdrive_file_id = "11bqEDKmNglm_8xDFuvF65kXlL3HzRMgm" 
+gdrive_file_id = "1Axvk4tun6rX9yQJRlVA2GCnMQPTjF8Ay" 
 if not os.path.exists(model_dir):
     print("Downloading model.zip from Google Drive...")
     url = f"https://drive.google.com/uc?id={gdrive_file_id}"
