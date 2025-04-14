@@ -6,15 +6,24 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import os
 import gdown
+import zipfile
 
 # Load model and tokenizer
-model_path = "model"
-if not os.path.exists(model_path):
-    print("Downloading model...")
-    gdown.download("https://drive.google.com/file/d/1E_7Zwg4IwRKx5RPBQBE-JpZmHEgOYwZ_/view?usp=sharing", model_path, quiet=False)
+model_dir = "model"
+model_zip = "modelzip.zip"
+gdrive_file_id = "11bqEDKmNglm_8xDFuvF65kXlL3HzRMgm" 
+if not os.path.exists(model_dir):
+    print("Downloading model.zip from Google Drive...")
+    url = f"https://drive.google.com/uc?id={gdrive_file_id}"
+    gdown.download(url, model_zip, quiet=False)
 
+    print("Extracting model.zip...")
+    with zipfile.ZipFile(model_zip, 'r') as zip_ref:
+        zip_ref.extractall()
+
+# model_path = "model" # for local execution. 
 tokenizer_path = "tokenizer"
-model = AutoModelForSequenceClassification.from_pretrained(model_path)
+model = AutoModelForSequenceClassification.from_pretrained(model_dir)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
 model.eval()
 
