@@ -4,3 +4,4 @@ torch==2.1.2
 typing_extensions>=4.6.0
 gdown==5.1.0
 numpy<2 
+safetensors>=0.3.0
