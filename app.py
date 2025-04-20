@@ -23,7 +23,7 @@ if not os.path.exists(model_dir):
 
 # model_path = "model" # for local execution. 
 tokenizer_path = "tokenizer"
-model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+model = AutoModelForSequenceClassification.from_pretrained(model_dir,trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
 model.eval()
 
