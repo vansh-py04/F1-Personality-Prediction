@@ -1,5 +1,6 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoConfig, AutoTokenizer
+from safetensors.torch import load_file
 import pickle
 import dash
 from dash import dcc, html
@@ -22,10 +23,17 @@ if not os.path.exists(model_dir):
         zip_ref.extractall(".")
     # print("Extracted files:", os.listdir(model_dir))
 
-# model_path = "model" # for local execution. 
+# model = AutoModelForSequenceClassification.from_pretrained(model_dir,
+#                                                            local_files_only=True)
+
+config = AutoConfig.from_pretrained(model_dir)
+# Initialize model
+model = AutoModelForSequenceClassification.from_config(config)
+# Load weights using safetensors
+state_dict = load_file(f"{model_dir}/pytorch_model.bin")
+model.load_state_dict(state_dict)
+
 tokenizer_path = "tokenizer"
-model = AutoModelForSequenceClassification.from_pretrained(model_dir,
-                                                           local_files_only=True)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
 model.eval()
 
