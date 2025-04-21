@@ -9,7 +9,7 @@ import gdown
 import zipfile
 
 # Load model and tokenizer
-model_dir = "model/m"
+model_dir = "m"
 model_zip = "modelzip.zip"
 gdrive_file_id = "1Axvk4tun6rX9yQJRlVA2GCnMQPTjF8Ay" 
 if not os.path.exists(model_dir):
