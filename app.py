@@ -29,6 +29,7 @@ model = AutoModelForSequenceClassification.from_config(config)
 # Load weights using safetensors
 state_dict = load_file(f"{model_dir}/pytorch_model.bin")
 model.load_state_dict(state_dict)
+model = model.half()  # Reduces memory usage by using float16 instead of float32
 
 tokenizer_path = "tokenizer"
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
