@@ -21,10 +21,7 @@ if not os.path.exists(model_dir):
     print("Extracting model.zip...")
     with zipfile.ZipFile(model_zip, 'r') as zip_ref:
         zip_ref.extractall(".")
-    # print("Extracted files:", os.listdir(model_dir))
 
-# model = AutoModelForSequenceClassification.from_pretrained(model_dir,
-#                                                            local_files_only=True)
 
 config = AutoConfig.from_pretrained(model_dir)
 # Initialize model
