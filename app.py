@@ -20,10 +20,9 @@ if not os.path.exists(model_dir):
     print("Extracting model.zip...")
     with zipfile.ZipFile(model_zip, 'r') as zip_ref:
         zip_ref.extractall(".")
+    print("Extracted files:", os.listdir(model_dir)) 
 
 # model_path = "model" # for local execution. 
-print("Files in model dir:", os.listdir("model"))
-
 tokenizer_path = "tokenizer"
 model = AutoModelForSequenceClassification.from_pretrained(model_dir,
                                                            local_files_only=True, 
