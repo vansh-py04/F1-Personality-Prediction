@@ -9,7 +9,7 @@ import gdown
 import zipfile
 
 # Load model and tokenizer
-model_dir = "model"
+model_dir = "model/m"
 model_zip = "modelzip.zip"
 gdrive_file_id = "1Axvk4tun6rX9yQJRlVA2GCnMQPTjF8Ay" 
 if not os.path.exists(model_dir):
@@ -20,13 +20,12 @@ if not os.path.exists(model_dir):
     print("Extracting model.zip...")
     with zipfile.ZipFile(model_zip, 'r') as zip_ref:
         zip_ref.extractall(".")
-    print("Extracted files:", os.listdir(model_dir)) 
+    # print("Extracted files:", os.listdir(model_dir))
 
 # model_path = "model" # for local execution. 
 tokenizer_path = "tokenizer"
 model = AutoModelForSequenceClassification.from_pretrained(model_dir,
-                                                           local_files_only=True, 
-                                                           from_safetensors=True)
+                                                           local_files_only=True)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
 model.eval()
 
