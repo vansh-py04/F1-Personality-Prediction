@@ -19,7 +19,7 @@ if not os.path.exists(model_dir):
 
     print("Extracting model.zip...")
     with zipfile.ZipFile(model_zip, 'r') as zip_ref:
-        zip_ref.extractall(model_dir)
+        zip_ref.extractall(".")
 
 # model_path = "model" # for local execution. 
 tokenizer_path = "tokenizer"
